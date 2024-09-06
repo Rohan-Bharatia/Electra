@@ -23,9 +23,13 @@
 #include <iostream>
 #include <chrono>
 #include <thread>
+#include <cstdint>
 
-auto DDRB  = 0x04;
-auto PORTB = 0x05;
+#define MMIO_BYTE(mem_addr) (*(volatile uint8_t *)(mem_addr))
+#define SFR_IO8(io_addr) _MMIO_BYTE((io_addr) + 0x20)
+
+auto DDRB  = SFR_IO8(0x04);
+auto PORTB = SFR_IO8(0x05);
 bool rw;
 
 void set(unsigned int port, bool mode)
