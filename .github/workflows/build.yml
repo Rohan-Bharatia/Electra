@@ -21,15 +21,15 @@ jobs:
       with:
         version: 1.0.4
 
-    - name: Install Arduino dependencies
+    - name: Install Arduino core
       run: |
         arduino-cli core update-index
-        arduino-cli core install arduino:uno-r3
+        arduino-cli core install arduino:avr
 
     - name: Compile Sketch
       run: |
         arduino-cli compile --fqbn arduino:avr:uno path/to/your_sketch.ino
 
-    - name: Upload firmware (Optional)
+    - name: Upload firmware
       run: |
         arduino-cli upload -p /dev/ttyUSB0 --fqbn arduino:avr:uno path/to/your_sketch.ino
