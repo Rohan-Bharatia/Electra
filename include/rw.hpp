@@ -17,12 +17,6 @@
 #ifndef _ARD_READ_WRITE_hpp_
 #define _ARD_READ_WRITE_hpp_ 1
 
-#ifdef __ARDUINO_UNO__
-
-#include "uno/ports.h"
-
-#endif // __ARDUINO_UNO__
-
 // Tell whether to set a port to input (read) or output (write)
 enum PortMode
 {

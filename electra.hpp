@@ -19,7 +19,15 @@
 
 #ifdef __ARDUINO_UNO__
 
-#include "include/uno/ports.h"
+#include "include/ports/uno.h"
+
+#elif __ARDUINO_NANO__
+
+#include "include/ports/nano.h"
+
+#elif __ARDUINO_MICRO__
+
+#include "include/ports/micro.h"
 
 #endif // __ARDUINO_UNO__
 
