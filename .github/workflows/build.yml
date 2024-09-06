@@ -28,8 +28,8 @@ jobs:
 
     - name: Compile Sketch
       run: |
-        arduino-cli compile --fqbn arduino:avr:uno path/to/your_sketch.ino
+        arduino-cli compile --fqbn arduino:avr:uno sketches/blink.ino
 
     - name: Upload firmware
       run: |
-        arduino-cli upload -p /dev/ttyUSB0 --fqbn arduino:avr:uno path/to/your_sketch.ino
+        arduino-cli upload -p /dev/ttyUSB0 --fqbn arduino:avr:uno sketches/blink.ino
